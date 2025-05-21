@@ -1,4 +1,4 @@
-/* Estilos gerais */
+/* Reset e base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -23,44 +23,150 @@ main {
   padding: 20px;
 }
 
-/* Galeria de Tatuagens */
-.galeria img {
-  margin: 10px;
-  width: 200px;
-  height: 200px;
+/* ---------- HOME ---------- */
+
+/* Galeria na home (um tatuador embaixo do outro) */
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.tatuadores div {
+.tatuador h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.tatuagens img {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.tatuagens img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- SOBRE ---------- */
+
+/* Seção principal do Sobre */
+.sobre-container {
+  margin-top: 20px;
+}
+
+/* 3 tatuadores lado a lado */
+.tatuadores {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-/* Formulário */
+.tatuador {
+  text-align: center;
+  width: 30%;
+}
+
+.imagem-tatuador {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.imagem-tatuador:hover {
+  transform: scale(1.05);
+}
+
+.tatuador h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.tatuador p {
+  color: #666;
+}
+
+/* Descrição do estúdio */
+.descricao-studio {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Redes sociais */
+.redes-sociais {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.icones-insta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.icones-insta a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.icones-insta a i {
+  margin-right: 8px;
+  color: #e1306c;
+  font-size: 20px;
+}
+
+.icones-insta a:hover {
+  color: #e1306c;
+}
+
+/* ---------- CADASTRO ---------- */
+
+/* Wrapper centralizado */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
 form label {
   display: block;
   margin: 8px 0;
   font-weight: bold;
 }
 
-button {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-
-/* Estilo para o formulário (usando grid) */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px 20px;
-  max-width: 600px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .form-grid label {
@@ -82,12 +188,10 @@ button:hover {
   border-color: #e1306c;
 }
 
-/* Campo de CEP - Margem Inferior */
 .form-grid input#cep {
-  margin-bottom: 20px; /* Espaço entre o campo CEP e o botão */
+  margin-bottom: 20px;
 }
 
-/* Estilo para o botão */
 .form-grid button {
   grid-column: span 2;
   padding: 12px;
@@ -98,123 +202,36 @@ button:hover {
   font-size: 16px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  margin-top: 20px; /* Espaçamento acima do botão */
+  margin-top: 20px;
 }
 
 .form-grid button:hover {
   background-color: #c62e56;
 }
 
-/* Estilo para o container "Sobre" */
-.sobre-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  margin-top: 20px;
-}
-
-.tatuadores {
-  flex: 1;
-  min-width: 250px;
-}
-
-.tatuador {
-  margin-bottom: 20px;
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-left: 4px solid #333;
-}
-
-.descricao-studio {
-  flex: 2;
-  min-width: 300px;
-  margin: 0 10px;
-  padding: 15px 20px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para as redes sociais */
-.redes-sociais {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ccc;
-  text-align: center;
-}
-
-.icones-insta {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.icones-insta a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.icones-insta a i {
-  margin-right: 8px;
-  color: #e1306c;
-  font-size: 20px;
-}
-
-.icones-insta a:hover {
-  color: #e1306c;
-}
-
-/* Estilo para as imagens de tatuagens na galeria */
-.imagem-tatuagem {
-  width: 200px;
-  height: 200px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.imagem-tatuagem:hover {
-  transform: scale(1.05);
-}
-
-/* Responsividade */
+/* ---------- RESPONSIVO ---------- */
 @media (max-width: 768px) {
+  .tatuadores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tatuador {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .icones-insta {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .sobre-container {
-    flex-direction: column;
+  .form-grid label {
+    text-align: left;
+    padding: 0;
   }
-
-  .tatuadores {
-    flex: 1 1 100%;
-  }
-
-  .descricao-studio {
-    flex: 1 1 100%;
-    margin-top: 20px;
-  }
-
-  /* Ajustando as imagens na galeria para telas pequenas */
-  .galeria img {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-.imagem-tatuador {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 10px 0;
-}
-.imagem-tatuador:hover {
-  transform: scale(1.05);
 }
